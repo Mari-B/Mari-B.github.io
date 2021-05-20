@@ -1,0 +1,13 @@
+.grid{
+    display: flex;
+    flex-wrap: wrap;
+    height: 300px;
+    width: 400px;
+}
+body {
+    font-family: "Courier New";
+}
+
+title {
+    font-family: "Courier New";
+}

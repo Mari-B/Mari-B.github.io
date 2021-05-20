@@ -3,6 +3,10 @@ body {
     margin: 0px;
 }
 
+.p1 {
+    text-align: justify;
+}
+
 section {
     background-color: white;
 }
@@ -166,6 +170,7 @@ hr {
 .project-link {
     text-decoration: none;
     color: #0D1321;
+    text-align: right;
 }
 
 a {
