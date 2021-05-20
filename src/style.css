@@ -12,14 +12,14 @@ section {
 }
 
 .hero {
-    background-color: #437F97;
+    background-color: #00B2CA;
     height: 100vh;
     color: white;
     font-size: 40px;
 }
 
 footer {
-    background-color: #2E0F15;
+    background-color: #212738;
     color: white;
     text-align: center;
     padding: 80px;
@@ -113,7 +113,7 @@ p {
     display:flex;
     justify-content: space-around;
     padding: 80px;
-    background-color: #DBD3C9;
+    background-color: #FFFBFC;
 }
 
 .sub-section-alternative {
@@ -121,7 +121,7 @@ p {
     flex-direction: column;
     text-align: center;
     padding: 80px;
-    background-color: #CC5A71;
+    background-color: rgb(215, 211, 211);
 }
 
 .headshot {
