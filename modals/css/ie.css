@@ -1,21 +1,8 @@
-// _config.scss
-$font-stack: Arial, Helvetica, sans-serif;
-$light-color: #f4f4f4;
-$primary-color: #203240;
-$secondary-color: #ee3123;
-
-
-// Set background & text color
-@mixin set-background($color) {
-  background-color: $color;
-  color: set-text-color($color)
-}
-
 body {
-  background-color: $light-color;
-  font-family: $font-stack;
+  background-color: #f4f4f4;
+  font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
-  color: $light-color;
+  color: #f4f4f4;
   margin: 0px;
 }
 
@@ -28,29 +15,27 @@ a {
 }
 
 .showcase {
-  @include set-background($primary-color);
+  background-color: #203240;
+  color: set-text-color(#203240);
   height: 100vh;
-
-  &-content {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 30px;
-
-    img {
-      width: 50%;
-    }
-
-    h1 {
-      font-size: 50px;
-      line-height: 1.2;
-      color: $light-color;
-    }
-  }
 }
 
-// _utilities.scss
+.showcase-content {
+  height: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.showcase-content img {
+  width: 50%;
+}
+
+.showcase-content h1 {
+  font-size: 50px;
+  line-height: 1.2;
+  color: #f4f4f4;
+}
+
 .container {
   max-width: 1100px;
   padding: 0 30px;
@@ -59,39 +44,37 @@ a {
   height: 100vh;
 }
 
-// _buttons.scss
-%btn {
+.button {
   display: inline-block;
   border-radius: 5px;
   padding: 8px 20px;
   margin: 3px;
+}
 
-  &:hover {
-    transform: scale(.98);
-  }
+.button:hover {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
 }
 
 .button {
-  @extend %btn;
-  background-color: $secondary-color;
-  color: $light-color;
+  background-color: #ee3123;
+  color: #f4f4f4;
   font-size: 15px;
 }
 
-
-// _mobile.scss
 @media only screen and (max-width: 1000px) {
   .showcase {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-
-    &-content {
-      text-align: center;
-
-      img {
-        display: none;
-      }
-    }
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .showcase-content {
+    text-align: center;
+  }
+  .showcase-content img {
+    display: none;
   }
 }
 
@@ -115,9 +98,12 @@ a {
 .modal-content {
   margin: 10% auto;
   width: 60%;
-  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
-  animation-name: modalopen;
-  animation-duration: var(--modal-duration);
+  -webkit-box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+          box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  -webkit-animation-name: modalopen;
+          animation-name: modalopen;
+  -webkit-animation-duration: var(--modal-duration);
+          animation-duration: var(--modal-duration);
 }
 
 .modal-header h2,
@@ -126,7 +112,7 @@ a {
 }
 
 .modal-header {
-  background: $secondary-color;
+  background: #ee3123;
   padding: 15px;
   color: #fff;
   border-top-left-radius: 5px;
@@ -136,11 +122,11 @@ a {
 .modal-body {
   padding: 10px 20px;
   background: #fff;
-  color: $primary-color;
+  color: #203240;
 }
 
 .modal-footer {
-  background: $secondary-color;
+  background: #ee3123;
   padding: 10px;
   color: #fff;
   text-align: center;
@@ -162,7 +148,7 @@ a {
   cursor: pointer;
 }
 
-@keyframes modalopen {
+@-webkit-keyframes modalopen {
   from {
     opacity: 0;
   }
@@ -171,3 +157,11 @@ a {
   }
 }
 
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
