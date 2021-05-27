@@ -1,0 +1,226 @@
+// _config.scss
+$font-stack: Arial, Helvetica, sans-serif;
+$light-color: #f4f4f4;
+$primary-color: #0e6cff;
+// $primary-color: #e0ffff;
+$secondary-color: #ff8700;
+
+// Set text color based on bg
+@function set-text-color($color) {
+  @if(lightness($color) > 70) {
+    @return #333;
+  } @else {
+    @return #fff;
+  }
+}
+
+// Set background & text color
+@mixin set-background($color) {
+  background-color: $color;
+  color: set-text-color($color)
+}
+
+// _style.scss
+// * {
+//   box-sizing: border-box;
+//   margin: 0;
+//   padding: 0;
+// }
+
+body {
+  background-color: $light-color;
+  font-family: $font-stack;
+  line-height: 1.6;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.showcase {
+  @include set-background($primary-color);
+  height: 100vh;
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    ul {
+      display: flex;
+      list-style-type: none;
+    }
+
+    li {
+      padding: 15px;
+    }
+
+    a {
+      color: set-text-color($primary-color);
+    }
+
+    a:hover {
+      color: $secondary-color;
+    }
+  }
+
+  &-content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+
+    img {
+      width: 50%;
+    }
+
+    h1 {
+      font-size: 50px;
+      line-height: 1.2;
+    }
+  }
+}
+
+// _utilities.scss
+.container {
+  max-width: 1100px;
+  padding: 0 30px;
+  margin: 0 auto;
+  overflow: auto;
+  height: 100vh;
+}
+
+
+// Margin & padding classes
+// $spaceamounts: (1,2,3,4,5);
+
+// @each $space in $spaceamounts {
+//   .m-#{$space} {
+//     margin: #{$space}rem;
+//   }
+//   .my-#{$space} {
+//     margin: #{$space}rem 0;
+//   }
+
+//   .p-#{$space} {
+//     padding: #{$space}rem;
+//   }
+//   .py-#{$space} {
+//     padding: #{$space}rem 0;
+//   }
+// }
+
+// _buttons.scss
+%btn {
+  display: inline-block;
+  border-radius: 5px;
+  padding: 8px 20px;
+  margin: 3px;
+
+  &:hover {
+    transform: scale(.98);
+  }
+}
+
+.button {
+  @extend %btn;
+  @include set-background(lighten($primary-color, 10%));
+}
+
+
+// _mobile.scss
+@media only screen and (max-width: 1000px) {
+  .showcase {
+    display: flex;
+    flex-wrap: wrap;
+
+    &-content {
+      text-align: center;
+
+      img {
+        display: none;
+      }
+    }
+  }
+}
+
+:root {
+  --modal-duration: 1s;
+  --modal-color: #428bca;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  margin: 10% auto;
+  width: 60%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
+}
+
+.modal-header h2,
+.modal-footer h3 {
+  margin: 0;
+}
+
+.modal-header {
+  background: var(--modal-color);
+  padding: 15px;
+  color: #fff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.modal-body {
+  padding: 10px 20px;
+  background: #fff;
+}
+
+.modal-footer {
+  background: var(--modal-color);
+  padding: 10px;
+  color: #fff;
+  text-align: center;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.close, .close1 {
+  color: #ccc;
+  float: right;
+  font-size: 30px;
+  color: #fff;
+}
+
+.close:hover, .close1:hover,
+.close:focus, .close1:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
