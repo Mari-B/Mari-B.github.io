@@ -2,17 +2,8 @@
 $font-stack: Arial, Helvetica, sans-serif;
 $light-color: #f4f4f4;
 $primary-color: #203240;
-// $primary-color: #e0ffff;
 $secondary-color: #ee3123;
 
-// Set text color based on bg
-@function set-text-color($color) {
-  @if(lightness($color) > 70) {
-    @return #333;
-  } @else {
-    @return #fff;
-  }
-}
 
 // Set background & text color
 @mixin set-background($color) {
@@ -20,17 +11,11 @@ $secondary-color: #ee3123;
   color: set-text-color($color)
 }
 
-// _style.scss
-// * {
-//   box-sizing: border-box;
-//   margin: 0;
-//   padding: 0;
-// }
-
 body {
   background-color: $light-color;
   font-family: $font-stack;
   line-height: 1.6;
+  color: $light-color;
 }
 
 img {
@@ -44,29 +29,6 @@ a {
 .showcase {
   @include set-background($primary-color);
   height: 100vh;
-
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    ul {
-      display: flex;
-      list-style-type: none;
-    }
-
-    li {
-      padding: 15px;
-    }
-
-    a {
-      color: set-text-color($primary-color);
-    }
-
-    a:hover {
-      color: $secondary-color;
-    }
-  }
 
   &-content {
     height: 100%;
@@ -82,6 +44,7 @@ a {
     h1 {
       font-size: 50px;
       line-height: 1.2;
+      color: $light-color;
     }
   }
 }
