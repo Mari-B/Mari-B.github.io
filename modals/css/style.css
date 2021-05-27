@@ -13,7 +13,7 @@ a {
 }
 
 .showcase {
-  background-color: #0e6cff;
+  background-color: #203240;
   color: #fff;
   height: 100vh;
 }
@@ -46,7 +46,7 @@ a {
 }
 
 .showcase nav a:hover {
-  color: #ff8700;
+  color: #ee3123;
 }
 
 .showcase-content {
@@ -76,7 +76,7 @@ a {
   max-width: 1100px;
   padding: 0 30px;
   margin: 0 auto;
-  overflow: auto;
+  overflow: hidden;
   height: 100vh;
 }
 
@@ -93,8 +93,9 @@ a {
 }
 
 .button {
-  background-color: #418bff;
-  color: #fff;
+  background-color: #ee3123;
+  color: #f4f4f4;
+  font-size: 15px;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -147,7 +148,7 @@ a {
 }
 
 .modal-header {
-  background: var(--modal-color);
+  background: #ee3123;
   padding: 15px;
   color: #fff;
   border-top-left-radius: 5px;
@@ -157,10 +158,11 @@ a {
 .modal-body {
   padding: 10px 20px;
   background: #fff;
+  color: #203240;
 }
 
 .modal-footer {
-  background: var(--modal-color);
+  background: #ee3123;
   padding: 10px;
   color: #fff;
   text-align: center;
