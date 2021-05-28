@@ -1,14 +1,4 @@
-body {
-  background-color: #f4f4f4;
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.6;
-  color: #f4f4f4;
-  margin: 0px;
-}
 
-img {
-  width: 100%;
-}
 
 a {
   text-decoration: none;
@@ -21,17 +11,10 @@ a {
 }
 
 .showcase-content {
+  float: left;
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-top: 30px;
+  text-align: left;
+  margin-top: 100px;
 }
 
 .showcase-content img {
@@ -42,6 +25,12 @@ a {
   font-size: 50px;
   line-height: 1.2;
   color: #f4f4f4;
+}
+
+.ie-view {
+  float: left;
+  margin-top: 200px;
+  text-align: left;
 }
 
 .container {
@@ -57,17 +46,16 @@ a {
   border-radius: 5px;
   padding: 8px 20px;
   margin: 3px;
+  width: 150px;
+  height: 40px;
+  background-color: #ee3123;
+  color: #f4f4f4;
+  font-size: 15px;
 }
 
 .button:hover {
   -webkit-transform: scale(0.98);
           transform: scale(0.98);
-}
-
-.button {
-  background-color: #ee3123;
-  color: #f4f4f4;
-  font-size: 15px;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -88,7 +76,6 @@ a {
 
 :root {
   --modal-duration: 1s;
-  --modal-color: #428bca;
 }
 
 .modal {
@@ -172,4 +159,12 @@ a {
   to {
     opacity: 1;
   }
+}
+
+body {
+  background-color: #f4f4f4;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #f4f4f4;
+  margin: 0px;
 }

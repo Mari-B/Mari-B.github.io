@@ -6,10 +6,6 @@ body {
   margin: 0px;
 }
 
-img {
-  width: 100%;
-}
-
 a {
   text-decoration: none;
 }
@@ -22,9 +18,16 @@ a {
 
 .showcase-content {
   height: 100%;
-  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-top: 30px;
-  margin-top: auto;
 }
 
 .showcase-content img {
@@ -50,17 +53,16 @@ a {
   border-radius: 5px;
   padding: 8px 20px;
   margin: 3px;
+  width: 150px;
+  height: 40px;
+  background-color: #ee3123;
+  color: #f4f4f4;
+  font-size: 15px;
 }
 
 .button:hover {
   -webkit-transform: scale(0.98);
           transform: scale(0.98);
-}
-
-.button {
-  background-color: #ee3123;
-  color: #f4f4f4;
-  font-size: 15px;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -77,11 +79,15 @@ a {
   .showcase-content img {
     display: none;
   }
+  .button {
+    display: block;
+    margin: auto;
+    margin-top: 5px;
+  }
 }
 
 :root {
   --modal-duration: 1s;
-  --modal-color: #428bca;
 }
 
 .modal {
@@ -166,3 +172,4 @@ a {
     opacity: 1;
   }
 }
+/*# sourceMappingURL=style.css.map */
