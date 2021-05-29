@@ -134,6 +134,8 @@ a {
   float: right;
   font-size: 30px;
   color: #fff;
+  position: relative;
+  bottom: 5px;
 }
 
 .close:hover, .close1:hover,
