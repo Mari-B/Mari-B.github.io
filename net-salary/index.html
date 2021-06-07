@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Your Net Salary</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+<body style="background-color: #afc5df;">
+    <div class="container w-75 p-3 d-flex flex-column min-vh-100 justify-content-center align-items-center">
+        <h1>Calculate Your Net Salary Here!</h1>
+        <div class="input-group mb-3 mt-5 w-50 col-md-3 mx-auto">
+            <div class="input-group-prepend">
+                <span class="input-group-text">£</span>
+              </div>
+            <input id="gross-salary" type="text" class="form-control" placeholder="Type your gross annual salary here" aria-label="Type in your gross salary" aria-describedby="Calculate net salary">
+            <button class="btn btn-light btn-outline-secondary" type="button" id="button-addon2">Calculate</button>
+        </div>
+        
+        <table class="table bg-light">
+            <thead>
+                <tr>
+                    <th scope="col">Total annual tax due</th>
+                    <th scope="col">Total annual NI due</th>
+                    <th scope="col">Annual net pay</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="tax-due">0</td>
+                    <td id="NI-due">0</td>
+                    <td id="net-pay">0</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="mt-5 text-center">
+            For more information about tax rates and allowances in the UK, please visit <a href="https://www.gov.uk/income-tax-rates">https://www.gov.uk/income-tax-rates</a></p>
+        <p class="mt-1 text-center">
+            This tax calculator was created by Marina Brunello. The code is available: <a href="https://github.com/Mari-B/net-salary.git">here</a></p>
+    </div>
+
+    
+    <script src="cleave.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>    
+    <script src="main.js"></script>
+</body>
+</html>
