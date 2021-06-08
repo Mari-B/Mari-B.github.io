@@ -10,7 +10,13 @@ function calculateTaxes() {
         minimumFractionDigits: 2
       })
 
-    if(grossSalary <= 15000) {
+    if(isNaN(grossSalary)) {
+        alert("Type in your salary!");
+        taxDue.innerHTML = formatter.format(0)
+        niDue.innerHTML = formatter.format(0)
+        netPay.innerHTML = formatter.format(0)
+    }
+    else if(grossSalary <= 15000) {
         taxDue.innerHTML = formatter.format(0)
         niDue.innerHTML = formatter.format(0)
         netPay.innerHTML = formatter.format(grossSalary)
@@ -34,7 +40,6 @@ function calculateTaxes() {
         niDue.innerHTML = formatter.format(totalNi)
         netPay.innerHTML = formatter.format(grossSalary - totalTax - totalNi)
     }
-
 }
 
 new Cleave('.form-control', {
