@@ -1,4 +1,4 @@
-# My portfolio
+# My projects
 
 This page includes some of the projects I've worked on recently, more specifically:
 
